@@ -38,13 +38,6 @@ const sendEmail =  ({recipient_email,message,fname,lname})=>{
     });
 }
 
-app.get("/",(req,res)=>{
-    res.send("server start")
-    // sendEmail()
-    // .then((response)=>res.send(response.message))
-    // .catch((error)=>res.status(500).send(error.message));
-});
-
 app.post("/sendemail",(req,res)=>{
     sendEmail(req.body)
     .then((response)=>res.send(response.message))
